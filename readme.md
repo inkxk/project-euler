@@ -1,0 +1,1 @@
+solution of https://projecteuler.net in Golang
