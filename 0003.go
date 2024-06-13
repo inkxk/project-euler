@@ -9,7 +9,7 @@ import (
 
 // problem 3
 func LargestPrimeFactor() {
-	defer util.TimeIt(time.Now())
+	defer util.TimeProcess(time.Now())
 	pfs := util.PrimeFactors(600851475143)
 
 	fmt.Println("answer:", pfs[len(pfs)-1])

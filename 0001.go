@@ -9,7 +9,7 @@ import (
 
 // problem 1
 func MultiplesOf3Or5() {
-	defer util.TimeIt(time.Now())
+	defer util.TimeProcess(time.Now())
 	sum := 0
 	for i := 0; i < 1000; i++ {
 		if i%3 == 0 || i%5 == 0 {

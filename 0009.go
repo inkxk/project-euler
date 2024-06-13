@@ -9,7 +9,7 @@ import (
 
 // problem 9
 func SpecialPythagoreanTriplet() {
-	defer util.TimeIt(time.Now())
+	defer util.TimeProcess(time.Now())
 	for a := 1; a < 1000; a++ {
 		for b := 1; b < 1000; b++ {
 			c := 1000 - a - b

@@ -9,7 +9,7 @@ import (
 
 // problem 2
 func EvenFibonacciNumbers() {
-	defer util.TimeIt(time.Now())
+	defer util.TimeProcess(time.Now())
 	fiboArray := []int{1, 2}
 	sum := 2
 	// loop while last element of fiboArray < 4,000,000

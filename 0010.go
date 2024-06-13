@@ -9,7 +9,7 @@ import (
 
 // problem 10
 func SummationOfPrimes() {
-	defer util.TimeIt(time.Now())
+	defer util.TimeProcess(time.Now())
 	sum := 0
 	for i := 1; i < 2000000; i++ {
 		if util.IsPrimeOptimized(i) {
