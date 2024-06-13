@@ -3,11 +3,13 @@ package main
 import (
 	"fmt"
 	"time"
+
+	"github.com/inkxk/project-euler/util"
 )
 
 // problem 9
 func SpecialPythagoreanTriplet() {
-	defer TimeIt(time.Now())
+	defer util.TimeIt(time.Now())
 	for a := 1; a < 1000; a++ {
 		for b := 1; b < 1000; b++ {
 			c := 1000 - a - b

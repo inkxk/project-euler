@@ -3,11 +3,13 @@ package main
 import (
 	"fmt"
 	"time"
+
+	"github.com/inkxk/project-euler/util"
 )
 
 // problem 2
 func EvenFibonacciNumbers() {
-	defer TimeIt(time.Now())
+	defer util.TimeIt(time.Now())
 	fiboArray := []int{1, 2}
 	sum := 2
 	// loop while last element of fiboArray < 4,000,000
