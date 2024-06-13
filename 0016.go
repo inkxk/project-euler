@@ -10,7 +10,7 @@ import (
 )
 
 // problem 16
-func LargeSum() {
+func PowerDigitSum() {
 	defer util.TimeProcess(time.Now())
 	sum := 0
 	powerFloat := math.Pow(2, 1000)
