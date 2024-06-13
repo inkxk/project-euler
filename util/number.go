@@ -1,6 +1,9 @@
 package util
 
-import "math"
+import (
+	"math"
+	"strconv"
+)
 
 func IsPrimeOptimized(n int) bool {
 	if n <= 1 {
@@ -43,4 +46,13 @@ func PrimeFactors(n int) (pfs []int) {
 	}
 
 	return
+}
+
+func IsPalindrome(x int) bool {
+	original := strconv.Itoa(x)
+	reversed := ""
+	for _, c := range original {
+		reversed = string(c) + reversed
+	}
+	return original == reversed
 }
