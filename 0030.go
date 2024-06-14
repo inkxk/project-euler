@@ -16,7 +16,7 @@ func DigitFifthPowers() {
 	total := 0
 	list := []int{}
 
-	// answer of 1000000 == 1000000000, so use 1000000
+	// answer of 1000000 == 10000000000, so use 100000
 	for i := 2; i < 1000000; i++ {
 		sum := 0
 		for _, v := range fmt.Sprintf("%v", i) {
