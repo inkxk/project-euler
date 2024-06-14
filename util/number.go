@@ -2,6 +2,7 @@ package util
 
 import (
 	"math"
+	"math/big"
 	"strconv"
 )
 
@@ -55,4 +56,32 @@ func IsPalindrome(x int) bool {
 		reversed = string(c) + reversed
 	}
 	return original == reversed
+}
+
+func GenFibonacciByDigit(digit int) (*big.Int, int) {
+	a := big.NewInt(0)
+	b := big.NewInt(1)
+
+	// Initialize limit as 10^99, the smallest integer with {digit} digits.
+	var limit big.Int
+
+	limit.Exp(big.NewInt(10), big.NewInt(int64(digit-1)), nil)
+
+	// index of a
+	count := 0
+
+	// Loop while a is smaller than 1e100.
+	for a.Cmp(&limit) < 0 {
+		// Compute the next Fibonacci number, storing it in a.
+		a.Add(a, b)
+		// Swap a and b so that b is the next number in the sequence.
+		a, b = b, a
+		count++
+	}
+
+	return a, count // a = {digit}-digit Fibonacci number
+}
+
+func RootOf(value int, root int) float64 {
+	return math.Round(math.Pow((float64(value)), (1.0 / float64(root))))
 }
