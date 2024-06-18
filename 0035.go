@@ -8,7 +8,7 @@ import (
 	"github.com/inkxk/project-euler/util"
 )
 
-// problem 34
+// problem 35
 func CircularPrimes() {
 	defer util.TimeProcess(time.Now())
 
@@ -23,7 +23,7 @@ func CircularPrimes() {
 			vInt, _ := strconv.Atoi(v)
 
 			// if 1 of them doesn't prime, break
-			if !util.IsPrimeOptimized(vInt) {
+			if !util.IsPrimeNumber(vInt) {
 				IsCircularPrimes = false
 				break in
 			}

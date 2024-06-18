@@ -13,7 +13,7 @@ func TenThousandOnePrime() {
 	count := 0
 	primeArray := []int{}
 	for i := 1; count < 10001; i++ {
-		if util.IsPrimeOptimized(i) {
+		if util.IsPrimeNumber(i) {
 			primeArray = append(primeArray, i)
 			count++
 		}

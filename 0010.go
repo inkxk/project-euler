@@ -12,7 +12,7 @@ func SummationOfPrimes() {
 	defer util.TimeProcess(time.Now())
 	sum := 0
 	for i := 1; i < 2000000; i++ {
-		if util.IsPrimeOptimized(i) {
+		if util.IsPrimeNumber(i) {
 			sum += i
 		}
 	}

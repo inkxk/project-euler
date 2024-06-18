@@ -6,7 +6,8 @@ import (
 	"strconv"
 )
 
-func IsPrimeOptimized(n int) bool {
+// เช็คว่าเป็นจำนวนเฉพาะหรือไม่
+func IsPrimeNumber(n int) bool {
 	if n <= 1 {
 		return false
 	} else if n == 2 {
@@ -23,6 +24,7 @@ func IsPrimeOptimized(n int) bool {
 	return true
 }
 
+// หาตัวหารทั้งของจำนวนเฉพาะ
 func PrimeFactors(n int) (pfs []int) {
 	// Get the number of 2s that divide n
 	for n%2 == 0 {
@@ -49,6 +51,7 @@ func PrimeFactors(n int) (pfs []int) {
 	return
 }
 
+// เช็คว่า original กับ reverse มีค่าเท่ากันไหม
 func IsPalindrome(x int) bool {
 	original := strconv.Itoa(x)
 	reversed := ""
@@ -58,6 +61,8 @@ func IsPalindrome(x int) bool {
 	return original == reversed
 }
 
+// สร้างเลข fibonaci ที่มีหลักตามเลข digit เช่น 100 หลัก
+// และบอก index ของเลข fibonaci ว่าเป็นตัวที่เท่าไร นับตั้งแต่ fibonaci ตัวแรก
 func GenFibonacciByDigit(digit int) (*big.Int, int) {
 	a := big.NewInt(0)
 	b := big.NewInt(1)
@@ -84,4 +89,15 @@ func GenFibonacciByDigit(digit int) (*big.Int, int) {
 
 func RootOf(value int, root int) float64 {
 	return math.Round(math.Pow((float64(value)), (1.0 / float64(root))))
+}
+
+// a ยกกำลัง b
+func Pow(a, b int) *big.Int {
+	mul := big.NewInt(int64(a))
+	result := big.NewInt(int64(a))
+	// a * a เป็นจำนวน b ครั้ง
+	for i := 1; i < b; i++ {
+		result.Mul(result, mul)
+	}
+	return result
 }
