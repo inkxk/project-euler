@@ -14,7 +14,7 @@ func LargestPalindromeProduct() {
 	for i := 1; i < 1000; i++ {
 		for j := 1; j < 1000; j++ {
 			product := i * j
-			if util.IsPalindrome(product) && product > max {
+			if util.IsPalindrome(fmt.Sprintf("%v", product)) && product > max {
 				max = product
 			}
 		}

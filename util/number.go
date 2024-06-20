@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math"
 	"math/big"
-	"strconv"
 	"strings"
 )
 
@@ -51,16 +50,6 @@ func PrimeFactors(n int) (pfs []int) {
 	}
 
 	return
-}
-
-// เช็คว่า original กับ reverse มีค่าเท่ากันไหม
-func IsPalindrome(x int) bool {
-	original := strconv.Itoa(x)
-	reversed := ""
-	for _, c := range original {
-		reversed = string(c) + reversed
-	}
-	return original == reversed
 }
 
 // สร้างเลข fibonaci ที่มีหลักตามเลข digit เช่น 100 หลัก

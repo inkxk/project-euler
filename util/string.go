@@ -17,3 +17,12 @@ func PossibleRotation(initial string) []string {
 
 	return rotated
 }
+
+// เช็คว่า original กับ reverse มีค่าเท่ากันไหม
+func IsPalindrome(original string) bool {
+	reversed := ""
+	for _, c := range original {
+		reversed = string(c) + reversed
+	}
+	return original == reversed
+}
