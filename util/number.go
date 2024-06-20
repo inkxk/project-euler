@@ -1,9 +1,11 @@
 package util
 
 import (
+	"fmt"
 	"math"
 	"math/big"
 	"strconv"
+	"strings"
 )
 
 // เช็คว่าเป็นจำนวนเฉพาะหรือไม่
@@ -100,4 +102,36 @@ func Pow(a, b int) *big.Int {
 		result.Mul(result, mul)
 	}
 	return result
+}
+
+// ใช้สำหรับ function GenPermutations
+func nextPerm(p []int) {
+	for i := len(p) - 1; i >= 0; i-- {
+		if i == 0 || p[i] < len(p)-i-1 {
+			p[i]++
+			return
+		}
+		p[i] = 0
+	}
+}
+
+// ใช้สำหรับ function GenPermutations
+func getPerm(orig, p []int) []int {
+	result := append([]int{}, orig...)
+	for i, v := range p {
+		result[i], result[i+v] = result[i+v], result[i]
+	}
+	return result
+}
+
+// สลับตำแหน่งตัวใน array โดย return ทุกตัวที่เป็นไปได้
+func GenLexicographicPermutations(orig []int) (perms []string) {
+	for p := make([]int, len(orig)); p[0] < len(p); nextPerm(p) {
+		perm := getPerm(orig, p)
+		// array of int -> string ex. [1,2,3] -> 123
+		permStr := strings.Trim(strings.Join(strings.Fields(fmt.Sprint(perm)), ""), "[]")
+		perms = append(perms, permStr)
+	}
+
+	return
 }
