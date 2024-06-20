@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"math"
 	"math/big"
+	"sort"
+	"strconv"
 	"strings"
 )
 
@@ -123,4 +125,15 @@ func GenLexicographicPermutations(orig []int) (perms []string) {
 	}
 
 	return
+}
+
+func IsPandigital(num int) bool {
+	numStr := strconv.Itoa(num)
+
+	digits := strings.Split(strconv.Itoa(num), "")
+	sort.Slice(digits, func(i, j int) bool { return digits[i] < digits[j] })
+
+	sorted := strings.Join(digits, "")
+
+	return sorted == "123456789"[:len(numStr)]
 }
