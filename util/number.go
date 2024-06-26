@@ -137,3 +137,35 @@ func IsPandigital(num int) bool {
 
 	return sorted == "123456789"[:len(numStr)]
 }
+
+func IsNumberConsecutive(num int) bool {
+	digits := strings.Split(strconv.Itoa(num), "")
+	isConsecutive := true
+
+	for index := range digits {
+		if index < len(digits)-1 {
+			currentValue, _ := strconv.Atoi(digits[index])
+			nextValue, _ := strconv.Atoi(digits[index+1])
+
+			if currentValue+1 != nextValue {
+				isConsecutive = false
+				break
+			}
+		}
+	}
+
+	return isConsecutive
+}
+
+func IsArrayConsecutive(digits []int) bool {
+	isConsecutive := true
+
+	for index := range digits {
+		if index < len(digits)-1 && digits[index]+1 != digits[index+1] {
+			isConsecutive = false
+			break
+		}
+	}
+
+	return isConsecutive
+}
