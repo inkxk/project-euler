@@ -138,6 +138,7 @@ func IsPandigital(num int) bool {
 	return sorted == "123456789"[:len(numStr)]
 }
 
+// เลขนั้นเป็นเลขติดต่อกันหรือไม่ เช่น 123, 6789
 func IsNumberConsecutive(num int) bool {
 	digits := strings.Split(strconv.Itoa(num), "")
 	isConsecutive := true
@@ -157,6 +158,7 @@ func IsNumberConsecutive(num int) bool {
 	return isConsecutive
 }
 
+// เลขใน array เรียงต่อกันหรือไม่ เช่น [1234, 1235, 1236, 1237]
 func IsArrayConsecutive(digits []int) bool {
 	isConsecutive := true
 
