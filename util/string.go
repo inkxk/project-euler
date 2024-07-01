@@ -1,5 +1,10 @@
 package util
 
+import (
+	"sort"
+	"strings"
+)
+
 // ค่าที่ส่งมา สามารถสลับตำแหน่งเป็นค่าอะไรได้บ้าง
 // จำนวนทั้งหมดใน array มีค่าเท่ากับ หลักของค่าที่ส่งมา
 // 123 => [123, 231, 312], สามารถเป็นได้ 3 ตัวตามหลักของค่าที่ส่งมา
@@ -25,4 +30,10 @@ func IsPalindrome(original string) bool {
 		reversed = string(c) + reversed
 	}
 	return original == reversed
+}
+
+func SortString(w string) string {
+	s := strings.Split(w, "")
+	sort.Strings(s)
+	return strings.Join(s, "")
 }
