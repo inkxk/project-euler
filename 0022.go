@@ -2,22 +2,12 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"slices"
 	"strings"
 	"time"
 
 	"github.com/inkxk/project-euler/util"
 )
-
-func loadFile(fileName string) []string {
-	b, err := os.ReadFile(fileName)
-	if err != nil {
-		fmt.Print(err)
-	}
-
-	return strings.Split(string(b), `,`)
-}
 
 func getNameScore(name string) int {
 	sum := 0
@@ -35,7 +25,7 @@ func NamesScores() {
 	defer util.TimeProcess(time.Now())
 
 	// load file
-	file := loadFile("0022_names.txt")
+	file := util.LoadFile("0022_names.txt")
 
 	// sorting file into alphabetical order.
 	slices.Sort(file)

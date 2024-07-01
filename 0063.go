@@ -13,14 +13,13 @@ func PowerfulDigitCounts() {
 
 	count := 0
 	for i := 1; i < 10; i++ {
-		for j := 1; j < 100; j++ {
-			pow := util.Pow(i, j)
-			length := len(pow.String())
-			if length == j {
+		for pow := 1; pow < 100; pow++ {
+			powResult := util.Pow(i, pow)
+			length := len(powResult.String())
+			if length == pow {
 				count++
 			}
 		}
-
 	}
 
 	fmt.Println("answer", count)
